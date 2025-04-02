@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="highlight">MCP</span> Demo</h1>
+            <div class="glow-line"></div>
+        </header>
+        
+        <main>
+            <div class="server-selection">
+                <div class="server-option selected" data-server="all">
+                    <i class="fas fa-server"></i>
+                    <span>All Servers</span>
+                </div>
+                <div class="server-option" data-server="math">
+                    <i class="fas fa-calculator"></i>
+                    <span>Math Server</span>
+                </div>
+                <div class="server-option" data-server="github">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Server</span>
+                </div>
+            </div>
+            
+            <div class="query-section">
+                <div class="input-container">
+                    <textarea id="question" placeholder="Enter your query here..."></textarea>
+                    <button id="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <div class="result-header">
+                    <h2>Response</h2>
+                    <div class="header-actions">
+                        <button id="clear-btn" class="action-btn" title="Clear Response">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <div class="loading-indicator hidden">
+                            <div class="spinner"></div>
+                            <span>Processing query...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div id="result">
+                        <div class="welcome-message">
+                            <h3>Welcome to the MCP Demo</h3>
+                            <p>This interface allows you to interact with multiple MCP servers:</p>
+                            <ul>
+                                <li><strong>Math Server:</strong> Perform mathematical operations</li>
+                                <li><strong>GitHub Server:</strong> Query GitHub repositories and data</li>
+                            </ul>
+                            <p>Select a server (or use all) and enter your query above to get started.</p>
+                            <p class="example">Example: "What changes are made in the last commit for the harvestlaboffshorly/harvestlab-ai-services where RaphaelOffshorly is a contributor"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="glow-line"></div>
+            <p>Powered by Model Context Protocol (MCP)</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
